@@ -16,11 +16,11 @@ func ShowDashboardPage() {
 		Children: []Widget{
 			Label{
 				Text: "Welcome to the Dashboard!",
-				Font: Font{PointSize: 14, Bold: true}},
+				Font: Font{Family: "Arial", PointSize: 14, Bold: true}},
 
 			PushButton{
 				Text:       "Logout",
-				Font:       Font{PointSize: 14, Bold: true},
+				Font:       Font{Family: "Arial", PointSize: 14, Bold: true},
 				Background: SolidColorBrush{Color: walk.RGB(0, 0, 255)},
 				OnClicked: func() {
 					mw.Close()

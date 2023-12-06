@@ -15,19 +15,19 @@ func ShowLoginPage() {
 		AssignTo: &mw,
 		Title:    "Login",
 		Size:     Size{Width: 300, Height: 150},
+		MaxSize:  Size{Height: 150},
 		Layout:   VBox{},
 		Children: []Widget{
 			HSplitter{
 				Children: []Widget{
 					Label{
-						Font: Font{PointSize: 12},
+						Font: Font{Family: "Arial", PointSize: 12},
 						Text: "Username:"},
 					LineEdit{
 						AssignTo: &inTE,
 						Name:     "Username",
-						Font:     Font{PointSize: 12},
+						Font:     Font{Family: "Arial", PointSize: 12},
 						MinSize:  Size{Width: 200, Height: 35},
-						MaxSize:  Size{Width: 300, Height: 35},
 						Text:     Bind("Username"),
 					},
 				},
@@ -35,15 +35,14 @@ func ShowLoginPage() {
 			HSplitter{
 				Children: []Widget{
 					Label{
-						Font: Font{PointSize: 12},
+						Font: Font{Family: "Arial", PointSize: 12},
 						Text: "Password:"},
 
 					LineEdit{
 						AssignTo:     &outTE,
 						Name:         "Password",
-						Font:         Font{PointSize: 12},
+						Font:         Font{Family: "Arial", PointSize: 12},
 						MinSize:      Size{Width: 200, Height: 35},
-						MaxSize:      Size{Width: 300, Height: 35},
 						Text:         Bind("Password"),
 						PasswordMode: true,
 					},
