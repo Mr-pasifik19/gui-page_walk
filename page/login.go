@@ -19,29 +19,40 @@ func ShowLoginPage() {
 		Children: []Widget{
 			HSplitter{
 				Children: []Widget{
-					Label{Text: "Username:"},
+					Label{
+						Font: Font{PointSize: 12},
+						Text: "Username:"},
 					LineEdit{
 						AssignTo: &inTE,
 						Name:     "Username",
-						MinSize:  Size{Width: 200},
+						Font:     Font{PointSize: 12},
+						MinSize:  Size{Width: 200, Height: 35},
+						MaxSize:  Size{Width: 300, Height: 35},
 						Text:     Bind("Username"),
 					},
 				},
 			},
 			HSplitter{
 				Children: []Widget{
-					Label{Text: "Password:"},
+					Label{
+						Font: Font{PointSize: 12},
+						Text: "Password:"},
+
 					LineEdit{
 						AssignTo:     &outTE,
 						Name:         "Password",
-						MinSize:      Size{Width: 200},
+						Font:         Font{PointSize: 12},
+						MinSize:      Size{Width: 200, Height: 35},
+						MaxSize:      Size{Width: 300, Height: 35},
 						Text:         Bind("Password"),
 						PasswordMode: true,
 					},
 				},
 			},
 			PushButton{
-				Text: "Login",
+				Text:       "Login",
+				Font:       Font{PointSize: 14, Bold: true},
+				Background: SolidColorBrush{Color: walk.RGB(0, 0, 255)},
 				OnClicked: func() {
 					if strings.ToUpper(inTE.Text()) == "USERNAME" && outTE.Text() == "PASSWORD" {
 						mw.Close()

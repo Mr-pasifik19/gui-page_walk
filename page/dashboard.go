@@ -14,9 +14,14 @@ func ShowDashboardPage() {
 		Size:     Size{Width: 400, Height: 300},
 		Layout:   VBox{},
 		Children: []Widget{
-			Label{Text: "Welcome to the Dashboard!"},
+			Label{
+				Text: "Welcome to the Dashboard!",
+				Font: Font{PointSize: 14, Bold: true}},
+
 			PushButton{
-				Text: "Logout",
+				Text:       "Logout",
+				Font:       Font{PointSize: 14, Bold: true},
+				Background: SolidColorBrush{Color: walk.RGB(0, 0, 255)},
 				OnClicked: func() {
 					mw.Close()
 					ShowLoginPage()
